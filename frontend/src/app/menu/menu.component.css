@@ -1,0 +1,16 @@
+.spacer{
+    flex: 1 1 auto;
+}
+.spacerIcon{
+    flex: 0.1 0.2 auto;
+}
+a{
+    text-decoration: none;
+    color:#ffffff;
+}
+.menu{
+    background-color: #a7abee;
+}
+.mat-icon{
+    color: #ffffff;
+}
