@@ -80,7 +80,7 @@ router.put("/", auth, async (req, res) => {
       nombre: req.body.nombre,
       descripcion: req.body.descripcion,
       estado: req.body.estado,
-      fecha: Date.now,
+      fecha: Date.now(),
     },
     {
       new: true,
@@ -93,17 +93,18 @@ router.put("/", auth, async (req, res) => {
 
 //Eliminar actividad
 router.delete("/:_id", auth, async (req, res) => {
-  //Buscamos el usuario
+  // Buscamos usuario
   const usuario = await Usuario.findById(req.usuario._id);
-  //Si no existe el usuario
-  if (!usuario) return res.status(400).send("No existe el usuario");
+  // si no existe el usuario
+  if (!usuario) return res.status(400).send("El usuario no existe en BD");
   // Si existe eliminamos una actividad
   const tablero = await Tablero.findByIdAndDelete(req.params._id);
-  //Si no existe la actividad
+  // si no existe esa actividad
   if (!tablero)
-    return res.status(400).send("No se encontro una actividad para eliminar");
-  //Si se elimina una tarea
-  res.status(200).send("Actividad eliminada");
+    return res.status(400).send("No se encontro actividad para eliminar");
+  // si se elimina una tarea
+  res.status(200).send({ message: "Actividad eliminada" });
 });
+
 
 module.exports = router;

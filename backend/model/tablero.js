@@ -4,7 +4,7 @@ const moongoose = require("mongoose");
 const esquemaTablero = new moongoose.Schema({
   idUsuario: String,
   nombre: String,
-  descricion: String,
+  descripcion: String,
   sticker: String,
   estado: String,
   fecha: {

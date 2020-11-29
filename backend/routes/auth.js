@@ -3,7 +3,6 @@ const express = require("express");
 const router = express.Router();
 // Modulos creados
 const { Usuario } = require("../model/usuario");
-const auth = require("../middleware/auth");
 //Ruta
 router.post("/", async (require, response) => {
   //Validar que el correo exista

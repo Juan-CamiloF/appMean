@@ -25,6 +25,7 @@ export class RegistroComponent implements OnInit {
     this.auth.registroUsuario(this.registrarUsuario).subscribe(
       (res)=>{
         console.log(res);
+        this.router.navigate(['/login']);
       },
       (err) => console.log(err)
     );
